@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle svg-extract",
+        "command": "svg-extract:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "svg-extract",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "svg-extract:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.svg-extract {
+	padding: 10px;
+
+	.anchor {
+		background:rgba(0,0,0,0.2);
+		position:absolute;
+		width:5px;
+		top:0px;
+		bottom:0;
+		left:0;
+	}
+
+	.canvas {
+		background: rgba(255,255,255,0.2);
+		overflow: auto;
+		width:100%;
+		height:calc(~"100vh - 64px");
+
+		> svg {
+			background: white;
+
+			*:hover, .selected {
+				stroke: #00FF00;
+				stroke-width:2px;
+			}
+		}
+	}
+}
