@@ -14,6 +14,23 @@
 		top:0px;
 		bottom:0;
 		left:0;
+		cursor:col-resize;
+	}
+
+	.toolbar {
+		text-align: right;
+		padding: 5px;
+		margin-bottom: 5px;
+
+		> .icon {
+			padding: 5px;
+			cursor: pointer;
+			border-radius: 2px;
+
+			&:hover {
+				background: @background-color-highlight;
+			}
+		}
 	}
 
 	.canvas {
@@ -21,6 +38,7 @@
 		overflow: auto;
 		width:100%;
 		height:calc(~"100vh - 64px");
+		position: relative;
 
 		> svg {
 			background: white;
@@ -29,6 +47,73 @@
 				stroke: #00FF00;
 				stroke-width:2px;
 
+			}
+		}
+
+		.info {
+			position: absolute;
+			background: @background-color-info;
+			border-radius: 2px;
+			height:0px;
+			width: 200px;
+			z-index: 42000;
+			display: block;
+			opacity: 0;
+
+
+			&.active {
+				display: block;
+				opacity: 1;
+				transition: opacity 0.2s ease-in-out, height 0.2s ease-in-out;
+				height: 200px;
+			}
+
+			// position: relative;
+			// background: #88b7d5;
+			&:after {
+				bottom: 100%;
+				left: 50%;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+				border-color: rgba(136, 183, 213, 0);
+				border-bottom-color: @background-color-info;
+				border-width: 10px;
+				margin-left: -10px;
+			}
+		}
+
+		.navigator {
+			background: @base-background-color;
+			border: 2px solid @base-border-color;
+			height: 200px;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 200px;
+			z-index: 42;
+
+			svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+
+			.mask {
+				background: rgba(0,0,0,0.2);
+				display: block;
+				position:absolute;
+				top:0;
+				left:0;
+				right:0;
+				bottom:0;
+				-webkit-clip-path: inset(0, 0, 10px, 10px);
+				// clip-path: inset(0, 0, 10px, 10px);
+				// width:200px;
+				// height:200px;
 			}
 		}
 	}
